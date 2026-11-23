@@ -1,1141 +1,425 @@
 <!DOCTYPE html>
-<html lang="am" class="scroll-smooth">
+<html lang="am">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>አሪፍ ሞባይል አፕስ | ከ2500+ ምርጥ ፕሪሚየም አፕሊኬሽኖችን በነጻ ያግኙ</title>
-    <meta name="description" content="ከ2500 የትም የማይገኙ ምርጥ፣ ፕሪሚየም የሞባይል አፕሊኬሽኖችን በአንድ ቦታ አሁኑኑ በነጻ ያግኙ። ለአንድሮይድ ተጠቃሚዎች የተዘጋጀ ልዩ የVIP አፕ ስቶር።">
-
-    <!-- Google Fonts: Noto Sans Ethiopic for crisp Amharic typography & Plus Jakarta Sans for numbers -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSQWR2Y6MH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SSQWR2Y6MH');
-</script>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans Ethiopic"', '"Plus Jakarta Sans"', 'sans-serif'],
-                        num: ['"Plus Jakarta Sans"', '"Noto Sans Ethiopic"', 'sans-serif'],
-                    },
-                    colors: {
-                        cyber: {
-                            bg: '#070B14',
-                            card: '#0E1525',
-                            surface: '#131C31',
-                            emerald: '#10B981',
-                            emeraldLight: '#34D399',
-                            cyan: '#06B6D4',
-                            gold: '#F59E0B',
-                            goldLight: '#FBBF24'
-                        }
-                    },
-                    animation: {
-                        'float': 'float 5s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 2s infinite',
-                        'pulse-glow': 'pulseGlow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'shimmer': 'shimmer 2.8s infinite linear',
-                        'spin-slow': 'spin 18s linear infinite',
-                        'bounce-subtle': 'bounceSubtle 2s infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-12px) rotate(1.5deg)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.45), 0 0 40px rgba(6, 182, 212, 0.25)' },
-                            '50%': { boxShadow: '0 0 35px rgba(16, 185, 129, 0.85), 0 0 65px rgba(245, 158, 11, 0.4)' },
-                        },
-                        shimmer: {
-                            '0%': { transform: 'translateX(-150%) skewX(-20deg)' },
-                            '100%': { transform: 'translateX(250%) skewX(-20deg)' },
-                        },
-                        bounceSubtle: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-4px)' },
-                        }
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>አስቸኳይ የስራ ቅጥር መረጃ ያግኙ - የውሃ ፋብሪካ</title>
+  
+  <!-- Google Fonts: Noto Sans Ethiopic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            ethiopic: ['"Noto Sans Ethiopic"', 'sans-serif'],
+          },
+          colors: {
+            water: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              950: '#082f49',
+            },
+            accent: {
+              cyan: '#00f2fe',
+              teal: '#4facfe',
+              emerald: '#10b981',
+              gold: '#f59e0b',
             }
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        /* Base Cyber Dark Theme & Scrollbar */
-        body {
-            background-color: #070B14;
-            color: #F8FAFC;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-        }
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    
+    body {
+      font-family: 'Noto Sans Ethiopic', sans-serif;
+      background: #031326;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-        /* Ambient Background Mesh & Grid */
-        .cyber-grid {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(16, 185, 129, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
-        }
+    /* Ambient Dynamic Ocean Background */
+    .ocean-bg {
+      background: radial-gradient(circle at 50% 0%, #0c4a6e 0%, #082f49 45%, #021427 100%);
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
 
-        /* Glassmorphism Surfaces */
-        .glass-card {
-            background: linear-gradient(145deg, rgba(19, 28, 49, 0.82) 0%, rgba(11, 17, 32, 0.92) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
-        }
+    /* Floating Bubbles Canvas Overlay */
+    .bubble {
+      position: absolute;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(56, 189, 248, 0.25) 70%, rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3), 0 0 12px rgba(56, 189, 248, 0.3);
+      animation: floatUp linear infinite;
+    }
 
-        .glass-card-highlight {
-            background: linear-gradient(145deg, rgba(16, 185, 129, 0.14) 0%, rgba(14, 21, 37, 0.95) 100%);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(16, 185, 129, 0.35);
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.12);
-        }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) scale(0.6);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      80% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.1);
+        opacity: 0;
+      }
+    }
 
-        /* Ultra High-Converting CTA Button */
-        .cta-btn-primary {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #10B981 0%, #059669 45%, #06B6D4 100%);
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
-        }
-        .cta-btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
-        }
-        .cta-btn-primary:active {
-            transform: translateY(1px) scale(0.98);
-        }
-        .cta-btn-primary::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 45%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-            animation: shimmer 2.6s infinite;
-        }
+    /* Glossy Glassmorphism Surfaces */
+    .glass-panel {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
 
-        /* Gold VIP CTA Variant */
-        .cta-btn-gold {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #FBBF24 100%);
-            color: #070B14;
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .cta-btn-gold:hover {
-            transform: translateY(-2px) scale(1.02);
-        }
-        .cta-btn-gold::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 45%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-            animation: shimmer 3s infinite;
-        }
+    .glass-card-nested {
+      background: rgba(14, 165, 233, 0.08);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
 
-        /* Gradient Text */
-        .text-gradient-emerald {
-            background: linear-gradient(135deg, #34D399 0%, #06B6D4 55%, #FBBF24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* Button Shimmer and Pulse */
+    .shimmer-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer-effect::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 70%
+      );
+      transform: rotate(25deg);
+      animation: shimmerSweep 3s infinite ease-in-out;
+    }
 
-        /* Hide Scrollbar on Category Chips */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    @keyframes shimmerSweep {
+      0% { transform: translateX(-150%) rotate(25deg); }
+      100% { transform: translateX(150%) rotate(25deg); }
+    }
 
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.65s ease-out, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .pulse-glow {
+      animation: glowScale 2s infinite ease-in-out;
+    }
 
-        /* Toast Notification Slide */
-        @keyframes toastSlideIn {
-            0% { opacity: 0; transform: translateY(20px) scale(0.92); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes toastSlideOut {
-            0% { opacity: 1; transform: translateY(0) scale(1); }
-            100% { opacity: 0; transform: translateY(-12px) scale(0.95); }
-        }
-        .toast-enter {
-            animation: toastSlideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-        .toast-exit {
-            animation: toastSlideOut 0.4s ease forwards;
-        }
-    </style>
+    @keyframes glowScale {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(6, 182, 212, 0.6), 0 0 50px rgba(14, 165, 233, 0.3);
+        transform: translateY(0);
+      }
+      50% {
+        box-shadow: 0 0 35px rgba(6, 182, 212, 0.9), 0 0 70px rgba(14, 165, 233, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+
+    /* Wave graphic animation */
+    .wave-shape {
+      animation: waveFloat 6s ease-in-out infinite alternate;
+    }
+    @keyframes waveFloat {
+      0% { transform: translateY(0px) scaleY(1); }
+      100% { transform: translateY(6px) scaleY(1.05); }
+    }
+  </style>
 </head>
-<body class="cyber-grid antialiased selection:bg-emerald-500 selection:text-white pb-24 md:pb-0">
 
-    <!-- Ambient Glowing Orbs -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute -top-24 -left-24 w-72 h-72 sm:w-96 sm:h-96 bg-emerald-500/15 rounded-full blur-[100px]"></div>
-        <div class="absolute top-1/3 -right-24 w-80 h-80 sm:w-[450px] sm:h-[450px] bg-cyan-500/12 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-10 left-1/4 w-72 h-72 bg-amber-500/10 rounded-full blur-[110px]"></div>
+<body class="text-white flex flex-col justify-start items-center p-3 sm:p-5 relative min-h-screen">
+  
+  <div class="ocean-bg"></div>
+  
+  <!-- Micro Floating Bubbles Container -->
+  <div id="bubbles-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="bubble" style="width: 28px; height: 28px; left: 12%; animation-duration: 9s; animation-delay: 0s;"></div>
+    <div class="bubble" style="width: 16px; height: 16px; left: 25%; animation-duration: 7s; animation-delay: 2s;"></div>
+    <div class="bubble" style="width: 42px; height: 42px; left: 45%; animation-duration: 12s; animation-delay: 1s;"></div>
+    <div class="bubble" style="width: 22px; height: 22px; left: 70%; animation-duration: 8.5s; animation-delay: 3.5s;"></div>
+    <div class="bubble" style="width: 34px; height: 34px; left: 88%; animation-duration: 10s; animation-delay: 0.5s;"></div>
+    <div class="bubble" style="width: 18px; height: 18px; left: 80%; animation-duration: 6.8s; animation-delay: 4.2s;"></div>
+    <div class="bubble" style="width: 14px; height: 14px; left: 5%; animation-duration: 8s; animation-delay: 5s;"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-md mx-auto my-auto flex flex-col gap-4 pb-20">
+    
+    <!-- Top Floating Live Status Badge -->
+    <div class="flex items-center justify-between px-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/20 border border-red-500/40 text-red-300 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+        <span class="relative">አስቸኳይ ማስታወቂያ መረጃ ያግኙ</span>
+      </div>
+
+      <!-- Remaining Slots Badge -->
+      <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-xs font-semibold backdrop-blur-md shadow-sm">
+        <span>ክፍት ቦታዎች:</span>
+        <span id="spots-count" class="font-extrabold text-amber-300 px-1 py-0.5 rounded bg-black/30">320 </span>
+      </div>
     </div>
 
-    <!-- Top Live Urgency Announcement Bar -->
-    <div class="relative z-30 bg-gradient-to-r from-emerald-950 via-[#0C1D2E] to-emerald-950 border-b border-emerald-500/30 py-2 px-3">
-        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs sm:text-sm font-medium text-center">
-            <span class="inline-flex items-center gap-1.5 text-emerald-300 font-bold">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-                </span>
-                ቀጥታ መረጃ:
-            </span>
-            <span class="text-slate-200">
-                <strong id="top-live-users" class="font-num text-amber-400 font-extrabold">14,892</strong> የአንድሮይድ ተጠቃሚዎች አሁን እየተጠቀሙ ነው!
-            </span>
-            <span class="hidden sm:inline text-emerald-500/60">|</span>
-            <a href="https://addismobileapps.com/sms.html" class="text-cyan-300 hover:text-amber-300 underline decoration-dotted underline-offset-4 font-bold transition">
-                የነጻ VIP መግቢያዎን አሁኑኑ ይውሰዱ &rarr;
-            </a>
+    <!-- Main Glass Card Container -->
+    <main class="glass-panel rounded-3xl overflow-hidden border border-cyan-300/20 shadow-2xl relative">
+      
+      <!-- Top Decorative Aquatic Waves Header -->
+      <div class="relative bg-gradient-to-b from-cyan-600/30 to-transparent pt-6 pb-4 px-6 text-center overflow-hidden">
+        
+        <!-- Subtle Glow Orb -->
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none"></div>
+
+        <!-- Factory Water Icon Shield -->
+        <div class="relative inline-flex items-center justify-center mb-3">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 p-[2px] shadow-lg shadow-cyan-500/30">
+            <div class="w-full h-full bg-[#04243f] rounded-2xl flex items-center justify-center">
+              <svg class="w-9 h-9 text-cyan-300 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                <path d="M12 11a3 3 0 0 0-3 3"></path>
+              </svg>
+            </div>
+          </div>
+          <!-- Sparkle tag -->
+          <span class="absolute -bottom-1 -right-1 flex h-5 w-5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-5 w-5 bg-emerald-500 text-[10px] text-white font-bold items-center justify-center">✓</span>
+          </span>
         </div>
-    </div>
 
-    <!-- Sticky Glass Header -->
-    <header class="sticky top-0 z-40 bg-[#070B14]/80 backdrop-blur-xl border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="https://addismobileapps.com/sms.html" class="flex items-center gap-2.5 group">
-                <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 p-0.5 shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition">
-                    <div class="w-full h-full bg-[#09101E] rounded-[14px] flex items-center justify-center">
-                        <!-- Android Bot SVG Icon -->
-                        <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.523 15.3414C16.968 15.3414 16.517 14.8904 16.517 14.3354C16.517 13.7804 16.968 13.3294 17.523 13.3294C18.078 13.3294 18.529 13.7804 18.529 14.3354C18.529 14.8904 18.078 15.3414 17.523 15.3414ZM6.477 15.3414C5.922 15.3414 5.471 14.8904 5.471 14.3354C5.471 13.7804 5.922 13.3294 6.477 13.3294C7.032 13.3294 7.483 13.7804 7.483 14.3354C7.483 14.8904 7.032 15.3414 6.477 15.3414ZM17.882 9.2994L19.893 5.8164C20.005 5.6224 19.939 5.3744 19.745 5.2624C19.551 5.1504 19.303 5.2164 19.191 5.4104L17.155 8.9364C15.636 8.2434 13.878 7.8544 12 7.8544C10.122 7.8544 8.364 8.2434 6.845 8.9364L4.809 5.4104C4.697 5.2164 4.449 5.1504 4.255 5.2624C4.061 5.3744 3.995 5.6224 4.107 5.8164L6.118 9.2994C2.662 11.1784 0.354 14.7394 0 18.9184H24C23.646 14.7394 21.338 11.1784 17.882 9.2994Z"/>
-                        </svg>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex items-center gap-1.5">
-                        <span class="font-extrabold text-base sm:text-lg tracking-tight text-white">አሪፍ አፕስ</span>
-                        <span class="px-1.5 py-0.5 text-[10px] font-extrabold bg-amber-400/20 text-amber-300 border border-amber-400/40 rounded-md">VIP</span>
-                    </div>
-                    <p class="text-[11px] text-emerald-400 font-medium">ለአንድሮይድ ብቻ የተዘጋጀ</p>
-                </div>
-            </a>
+        <h1 class="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-300 tracking-tight leading-snug">
+          አስቸኳይ የስራ ቅጥር ቦታዎች መረጃ
+        </h1>
 
-            <!-- Header Action CTA -->
-            <a href="https://addismobileapps.com/sms.html"
-               class="cta-btn-primary px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white shadow-lg shadow-emerald-500/30 flex items-center gap-2">
-                <span>በነጻ ይጀምሩ</span>
-                <svg class="w-4 h-4 animate-bounce-subtle" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                </svg>
-            </a>
+        <div class="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15">
+          <span class="text-xs text-cyan-200">መደብ አይነት ፦</span>
+          <span class="text-sm font-extrabold text-white">የውሃ ፋብሪካ</span>
         </div>
-    </header>
+      </div>
 
-    <!-- MAIN HERO SECTION -->
-    <main class="relative z-10">
-        <section class="pt-7 pb-12 sm:pt-12 sm:pb-16 px-4 max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                
-                <!-- Left Conversion Copy Column -->
-                <div class="lg:col-span-7 text-center lg:text-right space-y-5 sm:space-y-6">
-                    <!-- Android Exclusive Badge -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs sm:text-sm font-bold shadow-inner">
-                        <svg class="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.523 15.3414C16.968 15.3414 16.517 14.8904 16.517 14.3354C16.517 13.7804 16.968 13.3294 17.523 13.3294C18.078 13.3294 18.529 13.7804 18.529 14.3354C18.529 14.8904 18.078 15.3414 17.523 15.3414ZM6.477 15.3414C5.922 15.3414 5.471 14.8904 5.471 14.3354C5.471 13.7804 5.922 13.3294 6.477 13.3294C7.032 13.3294 7.483 13.7804 7.483 14.3354C7.483 14.8904 7.032 15.3414 6.477 15.3414ZM17.882 9.2994L19.893 5.8164C20.005 5.6224 19.939 5.3744 19.745 5.2624C19.551 5.1504 19.303 5.2164 19.191 5.4104L17.155 8.9364C15.636 8.2434 13.878 7.8544 12 7.8544C10.122 7.8544 8.364 8.2434 6.845 8.9364L4.809 5.4104C4.697 5.2164 4.449 5.1504 4.255 5.2624C4.061 5.3744 3.995 5.6224 4.107 5.8164L6.118 9.2994C2.662 11.1784 0.354 14.7394 0 18.9184H24C23.646 14.7394 21.338 11.1784 17.882 9.2994Z"/>
-                        </svg>
-                        <span>ለአንድሮይድ ስልክ ተጠቃሚዎች ብቻ • 100% ነጻ ሙከራ</span>
-                    </div>
-
-                    <!-- Exact Requested Core Headline -->
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.35] sm:leading-[1.3] tracking-tight text-white">
-                        ከ<span class="font-num text-gradient-emerald">2500</span> የትም የማይገኙ ምርጥ፣ <span class="text-gradient-emerald">ፕሪሚየም የሞባይል አፕሊኬሽኖችን</span> በአንድ ቦታ አሁኑኑ በነጻ ያግኙ ፡፡
-                    </h1>
-
-                    <!-- Persuasive Subheadline -->
-                    <p class="text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        <strong class="text-emerald-300">ዋይፋይ ፓስወርድ ማግኛ</strong>፣ <strong class="text-amber-300">ቲክቶክ ቫይራል ማድረጊያ</strong>፣ <strong class="text-cyan-300">ስራ ፈላጊ እና ብድር አፋላጊ</strong>፣ <strong class="text-emerald-300">የውጪ ሃገር ስራ መረጃ</strong>፣ <strong class="text-amber-300">ሽልማት አፕ</strong> እንዲሁም <strong class="text-cyan-300">የፊልም ማያ</strong> VIP አፖችን በአንድ ጠቅታ በነጻ ያውርዱ!
-                    </p>
-
-                    <!-- Urgency Countdown Box -->
-                    <div class="glass-card-highlight rounded-2xl p-4 sm:p-5 max-w-xl mx-auto lg:mx-0">
-                        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-                            <div class="text-center sm:text-right">
-                                <div class="inline-flex items-center gap-1.5 text-amber-400 text-xs sm:text-sm font-extrabold">
-                                    <svg class="w-4 h-4 animate-spin-slow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                    <span>ልዩ የነጻ VIP ቅናሽ የሚያበቃበት ጊዜ!</span>
-                                </div>
-                                <p class="text-[11px] sm:text-xs text-slate-300 mt-0.5">
-                                    ጊዜው ከማለቁ በፊት ተመዝግበው ሁሉንም <strong class="text-white">2,500+ አፖች</strong> በነጻ ይክፈቱ
-                                </p>
-                            </div>
-
-                            <!-- Live Countdown Digits -->
-                            <div class="flex items-center gap-2 font-num" dir="ltr">
-                                <div class="bg-[#070B14] border border-emerald-500/40 rounded-xl px-3 py-2 text-center min-w-[58px] shadow-inner">
-                                    <div id="cd-hours" class="text-xl sm:text-2xl font-extrabold text-emerald-400 leading-none">01</div>
-                                    <div class="text-[10px] text-slate-400 font-sans mt-1">ሰዓት</div>
-                                </div>
-                                <span class="text-emerald-400 font-black text-xl animate-pulse">:</span>
-                                <div class="bg-[#070B14] border border-emerald-500/40 rounded-xl px-3 py-2 text-center min-w-[58px] shadow-inner">
-                                    <div id="cd-minutes" class="text-xl sm:text-2xl font-extrabold text-cyan-300 leading-none">47</div>
-                                    <div class="text-[10px] text-slate-400 font-sans mt-1">ደቂቃ</div>
-                                </div>
-                                <span class="text-emerald-400 font-black text-xl animate-pulse">:</span>
-                                <div class="bg-[#070B14] border border-amber-500/50 rounded-xl px-3 py-2 text-center min-w-[58px] shadow-inner">
-                                    <div id="cd-seconds" class="text-xl sm:text-2xl font-extrabold text-amber-400 leading-none">59</div>
-                                    <div class="text-[10px] text-slate-400 font-sans mt-1">ሰከንድ</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PRIMARY HIGH-CONVERTING HERO CTA BUTTON -->
-                    <div class="pt-1 space-y-3 max-w-xl mx-auto lg:mx-0">
-                        <a href="https://addismobileapps.com/sms.html"
-                           class="cta-btn-primary animate-pulse-glow w-full py-4 sm:py-5 px-6 rounded-2xl flex items-center justify-between gap-3 text-white shadow-2xl border border-emerald-300/40 group">
-                            <div class="flex items-center gap-3.5">
-                                <div class="w-12 h-12 rounded-xl bg-white/15 backdrop-blur-md flex items-center justify-center shrink-0 group-hover:rotate-6 transition">
-                                    <!-- Android SVG -->
-                                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M17.523 15.3414C16.968 15.3414 16.517 14.8904 16.517 14.3354C16.517 13.7804 16.968 13.3294 17.523 13.3294C18.078 13.3294 18.529 13.7804 18.529 14.3354C18.529 14.8904 18.078 15.3414 17.523 15.3414ZM6.477 15.3414C5.922 15.3414 5.471 14.8904 5.471 14.3354C5.471 13.7804 5.922 13.3294 6.477 13.3294C7.032 13.3294 7.483 13.7804 7.483 14.3354C7.483 14.8904 7.032 15.3414 6.477 15.3414ZM17.882 9.2994L19.893 5.8164C20.005 5.6224 19.939 5.3744 19.745 5.2624C19.551 5.1504 19.303 5.2164 19.191 5.4104L17.155 8.9364C15.636 8.2434 13.878 7.8544 12 7.8544C10.122 7.8544 8.364 8.2434 6.845 8.9364L4.809 5.4104C4.697 5.2164 4.449 5.1504 4.255 5.2624C4.061 5.3744 3.995 5.6224 4.107 5.8164L6.118 9.2994C2.662 11.1784 0.354 14.7394 0 18.9184H24C23.646 14.7394 21.338 11.1784 17.882 9.2994Z"/>
-                                    </svg>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-lg sm:text-xl font-black tracking-wide leading-tight">
-                                        አሁኑኑ በነጻ ያውርዱ / ይመዝገቡ
-                                    </div>
-                                    <div class="text-xs sm:text-sm text-emerald-100 font-semibold mt-0.5">
-                                        ሁሉንም 2,500+ ፕሪሚየም አፖች ወዲያውኑ ይክፈቱ!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-10 h-10 rounded-full bg-white text-emerald-700 flex items-center justify-center shrink-0 shadow-md group-hover:translate-x-1 transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                            </div>
-                        </a>
-
-                        <!-- Live Registered Users & Trust Micro-Copy -->
-                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-slate-300 pt-1">
-                            <div class="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
-                                <span class="relative flex h-2.5 w-2.5">
-                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                                </span>
-                                <span><strong id="hero-live-count" class="font-num text-emerald-400 font-extrabold">14,892</strong> የተመዘገቡ ንቁ ተጠቃሚዎች</span>
-                            </div>
-                            <div class="flex items-center gap-1.5 text-amber-300 font-semibold">
-                                <span>★★★★★</span>
-                                <span class="text-slate-300">(4.9/5 ደረጃ)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Interactive Animated Android Phone Mockup -->
-                <div class="lg:col-span-5 flex justify-center relative">
-                    <!-- Floating Decorative Badges around Phone -->
-                    <div class="hidden sm:flex items-center gap-2 glass-card px-3.5 py-2.5 rounded-2xl absolute -left-4 top-10 z-20 animate-float border border-emerald-400/30">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</div>
-                        <div>
-                            <div class="text-xs font-extrabold text-white">ያለ ማስታወቂያ (No Ads)</div>
-                            <div class="text-[10px] text-emerald-300">100% VIP ተከፍቷል</div>
-                        </div>
-                    </div>
-
-                    <div class="hidden sm:flex items-center gap-2 glass-card px-3.5 py-2.5 rounded-2xl absolute -right-3 bottom-16 z-20 animate-float-delayed border border-amber-400/30">
-                        <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">★</div>
-                        <div>
-                            <div class="text-xs font-extrabold text-white">2,500+ ምርጥ አፖች</div>
-                            <div class="text-[10px] text-amber-300">በየቀኑ አዳዲስ ይጨመራሉ</div>
-                        </div>
-                    </div>
-
-                    <!-- Phone Frame -->
-                    <div class="w-[300px] sm:w-[325px] rounded-[42px] p-3 bg-gradient-to-b from-slate-700 via-slate-900 to-black border border-white/20 shadow-[0_25px_70px_-15px_rgba(16,185,129,0.35)] relative">
-                        <!-- Speaker Notch -->
-                        <div class="w-28 h-5 bg-black rounded-b-2xl mx-auto mb-2 flex items-center justify-center">
-                            <div class="w-10 h-1 rounded-full bg-slate-800"></div>
-                        </div>
-
-                        <!-- Phone Screen Content -->
-                        <div class="bg-[#090F1D] rounded-[32px] p-4 space-y-3.5 border border-white/5 overflow-hidden">
-                            <!-- Phone Top Bar -->
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">አሪፍ VIP STORE</span>
-                                    <h3 class="text-sm font-extrabold text-white">ምርጥ የዛሬ አፕሊኬሽኖች</h3>
-                                </div>
-                                <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold border border-emerald-500/30">
-                                    FREE VIP
-                                </span>
-                            </div>
-
-                            <!-- Featured Mini App Cards inside Phone -->
-                            <div class="space-y-2.5">
-                                <!-- Mini App 1 -->
-                                <a href="https://addismobileapps.com/sms.html" class="flex items-center justify-between p-2.5 rounded-2xl bg-white/5 hover:bg-emerald-500/15 border border-white/10 transition group">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-white font-black shadow">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-xs font-bold text-white group-hover:text-emerald-300">ዋይፋይ ፓስወርድ ማግኛ</div>
-                                            <div class="text-[10px] text-slate-400">ፈጣን Wi-Fi መክፈቻ • 4.9★</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-white text-[10px] font-extrabold">አውርድ</span>
-                                </a>
-
-                                <!-- Mini App 2 -->
-                                <a href="https://addismobileapps.com/sms.html" class="flex items-center justify-between p-2.5 rounded-2xl bg-white/5 hover:bg-emerald-500/15 border border-white/10 transition group">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-600 to-rose-600 flex items-center justify-center text-white font-black shadow">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-xs font-bold text-white group-hover:text-emerald-300">ቲክቶክ ቫይራል ማድረጊያ</div>
-                                            <div class="text-[10px] text-slate-400">ForYou ፎሎወር እና ላይክ • 5.0★</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-white text-[10px] font-extrabold">አውርድ</span>
-                                </a>
-
-                                <!-- Mini App 3 -->
-                                <a href="https://addismobileapps.com/sms.html" class="flex items-center justify-between p-2.5 rounded-2xl bg-white/5 hover:bg-emerald-500/15 border border-white/10 transition group">
-                                    <div class="flex items-center gap-2.5">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-black shadow">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                        </div>
-                                        <div>
-                                            <div class="text-xs font-bold text-white group-hover:text-emerald-300">ስራ ፈላጊ እና ብድር አፋላጊ</div>
-                                            <div class="text-[10px] text-slate-400">የሃገር ውስጥ እና የውጪ ስራ • 4.9★</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-white text-[10px] font-extrabold">አውርድ</span>
-                                </a>
-                            </div>
-
-                            <!-- Phone Bottom CTA -->
-                            <a href="https://addismobileapps.com/sms.html"
-                               class="block w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs text-center shadow-lg hover:brightness-110 transition">
-                                +2,497 ሌሎች ፕሪሚየም አፖችን ይመልከቱ &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div class="p-5 sm:p-6 space-y-4">
+        
+        <!-- Big Salary Spotlight Box -->
+        <div class="glass-card-nested rounded-2xl p-4 border border-cyan-400/40 relative overflow-hidden group">
+          <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl pointer-events-none"></div>
+          
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400/20 to-teal-500/20 border border-emerald-400/30 flex items-center justify-center text-2xl flex-shrink-0 shadow-inner">
+              💰
             </div>
-        </section>
-
-        <!-- TRUST & KEY ADVANTAGES STRIP -->
-        <section class="py-6 px-4 max-w-6xl mx-auto reveal">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xs sm:text-sm font-extrabold text-white">100% ደህንነቱ የተጠበቀ</h3>
-                        <p class="text-[11px] text-slate-400">ከቫይረስ ነጻ የተረጋገጡ አፖች</p>
-                    </div>
-                </div>
-
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xs sm:text-sm font-extrabold text-white">ያለ ምንም ማስታወቂያ</h3>
-                        <p class="text-[11px] text-slate-400">የሚረብሽ ማስታወቂያ የለባቸውም</p>
-                    </div>
-                </div>
-
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xs sm:text-sm font-extrabold text-white">እጅግ ፈጣን ዳውንሎድ</h3>
-                        <p class="text-[11px] text-slate-400">በቀጥታ በሰከንዶች ይጫናሉ</p>
-                    </div>
-                </div>
-
-                <div class="glass-card p-4 rounded-2xl flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xs sm:text-sm font-extrabold text-white">ለሁሉም አንድሮይድ</h3>
-                        <p class="text-[11px] text-slate-400">Samsung, Tecno, Infinix, Xiaomi...</p>
-                    </div>
-                </div>
+            <div class="flex-1">
+              <span class="text-xs uppercase tracking-wider text-cyan-200 font-semibold block">ወርሃዊ የተጣራ ክፍያ</span>
+              <div class="text-xl sm:text-2xl font-black text-emerald-300 tracking-wide leading-tight">
+                ደሞዝ 36,000+
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- APPEALING PREMIUM APPS SHOWCASE SECTION -->
-        <section id="apps-section" class="py-12 sm:py-16 px-4 max-w-6xl mx-auto reveal">
-            <div class="text-center max-w-2xl mx-auto space-y-3 mb-8">
-                <span class="inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs font-extrabold">
-                    ተወዳጅ ፕሪሚየም አፕሊኬሽኖች
-                </span>
-                <h2 class="text-2xl sm:text-4xl font-black text-white leading-snug">
-                    በነጻ የሚያገኟቸው <span class="text-gradient-emerald">ምርጥ VIP አፖች</span>
-                </h2>
-                <p class="text-slate-300 text-xs sm:text-base">
-                    ከታች ካሉት ምድቦች ይምረጡና የሚፈልጉትን አፕሊኬሽን ጠቅ በማድረግ በነጻ ያውርዱ!
-                </p>
+          <!-- Extra Benefits Pill Group -->
+          <div class="mt-3 pt-3 border-t border-cyan-500/20 grid grid-cols-2 gap-2 text-xs">
+            <div class="flex items-center gap-1.5 text-cyan-100 font-medium">
+              <span class="text-base">🚌</span> ትራንስፖርት ተዘጋጅቷል
             </div>
-
-            <!-- Interactive Category Filter Tabs -->
-            <div id="category-tabs" class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar pb-4 mb-6">
-                <button data-cat="all" class="cat-btn active shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 transition">
-                    ሁሉም (2,500+)
-                </button>
-                <button data-cat="jobs" class="cat-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold glass-card text-slate-300 hover:text-white transition">
-                    💼 ስራ እና ብድር
-                </button>
-                <button data-cat="social" class="cat-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold glass-card text-slate-300 hover:text-white transition">
-                    📶 ሶሻል እና ዋይፋይ
-                </button>
-                <button data-cat="entertainment" class="cat-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold glass-card text-slate-300 hover:text-white transition">
-                    🎬 ፊልም እና ሽልማት
-                </button>
-                <button data-cat="tools" class="cat-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold glass-card text-slate-300 hover:text-white transition">
-                    🛡️ VPN እና ኤዲተር
-                </button>
+            <div class="flex items-center gap-1.5 text-cyan-100 font-medium">
+              <span class="text-base">🎁</span> ሙሉ ጥቅማጥቅም
             </div>
+          </div>
+        </div>
 
-            <!-- App Cards Grid -->
-            <div id="apps-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                <!-- Cards dynamically rendered & interactive via JavaScript -->
+        <div class="bg-black/25 rounded-2xl p-3.5 border border-white/10">
+          <div class="flex justify-between items-center mb-2.5 px-1">
+            <span class="text-xs text-amber-300 font-semibold flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                <path stroke-width="2" stroke-linecap="round" d="M12 6v6l4 2"/>
+              </svg>
+              የምዝገባ ጊዜ ሊያልቅ የቀረው ሰዓት:
+            </span>
+            <span class="text-[10px] text-gray-300 font-mono">የተወሰኑ ሰዓታት</span>
+          </div>
+
+          <!-- Countdown Digits Grid -->
+          <div class="grid grid-cols-4 gap-2 text-center">
+            <div class="bg-white/10 rounded-xl py-2 px-1 border border-white/10">
+              <span id="days" class="font-extrabold text-lg sm:text-xl text-white block leading-none font-mono">02</span>
+              <span class="text-[10px] text-cyan-200 mt-1 block">ቀናት</span>
             </div>
-
-            <!-- Unlock All 2500+ Apps CTA Button -->
-            <div class="mt-10 text-center">
-                <a href="https://addismobileapps.com/sms.html"
-                   class="cta-btn-gold inline-flex items-center justify-center gap-3 px-7 py-4 sm:px-10 sm:py-5 rounded-2xl font-black text-base sm:text-lg shadow-2xl shadow-amber-500/25">
-                    <span>ሁሉንም 2,500+ ፕሪሚየም አፖች በነጻ ይክፈቱ</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </a>
-                <p class="text-xs text-slate-400 mt-2.5">ምንም ክፍያ አይጠየቁም • በቀጥታ ወደ መመዝገቢያ ገጽ ይወስድዎታል</p>
+            <div class="bg-white/10 rounded-xl py-2 px-1 border border-white/10">
+              <span id="hours" class="font-extrabold text-lg sm:text-xl text-white block leading-none font-mono">14</span>
+              <span class="text-[10px] text-cyan-200 mt-1 block">ሰዓት</span>
             </div>
-        </section>
-
-        <!-- HOW IT WORKS (3 EASY STEPS) -->
-        <section class="py-12 sm:py-16 px-4 max-w-6xl mx-auto reveal">
-            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-emerald-500/20 relative overflow-hidden">
-                <div class="text-center max-w-xl mx-auto mb-10">
-                    <span class="text-emerald-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider">ቀላል እና ፈጣን አሰራር</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">በ3 ቀላል እርምጃዎች እንዴት በነጻ ማግኘት ይችላሉ?</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Step 1 -->
-                    <div class="bg-[#090F1D]/90 border border-white/10 rounded-2xl p-6 relative">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white font-num font-black text-lg flex items-center justify-center mb-4 shadow-lg shadow-emerald-500/30">
-                            1
-                        </div>
-                        <h3 class="text-lg font-extrabold text-white mb-2">«አሁኑኑ በነጻ ያውርዱ» የሚለውን ይጫኑ</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            በዚህ ገጽ ላይ ያለውን አረንጓዴ ቁልፍ በመጫን ወደ ፈጣን የአንድሮይድ ማረጋገጫ ገጽ ይሂዱ።
-                        </p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="bg-[#090F1D]/90 border border-white/10 rounded-2xl p-6 relative">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500 text-white font-num font-black text-lg flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/30">
-                            2
-                        </div>
-                        <h3 class="text-lg font-extrabold text-white mb-2">ስልክ ቁጥርዎን ያረጋግጡ</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            በሚመጣልዎ ገጽ ላይ ስልክ ቁጥርዎን በማስገባት በSMS የሚላክልዎትን ሚስጥር ቁጥር ያረጋግጡ።
-                        </p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="bg-[#090F1D]/90 border border-white/10 rounded-2xl p-6 relative">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-num font-black text-lg flex items-center justify-center mb-4 shadow-lg shadow-amber-500/30">
-                            3
-                        </div>
-                        <h3 class="text-lg font-extrabold text-white mb-2">2,500+ አፖችን በነጻ ያውርዱ!</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            ወዲያውኑ የVIP መግቢያዎ ይከፈታል፤ የሚፈልጉትን ፕሪሚየም አፕ እና ጌም ያለ ገደብ ማውረድ ይችላሉ!
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mt-8 text-center">
-                    <a href="https://addismobileapps.com/sms.html"
-                       class="cta-btn-primary inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl font-black text-base text-white shadow-xl">
-                        <span>አሁኑኑ ይጀምሩ - በነጻ ይመዝገቡ</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                </div>
+            <div class="bg-white/10 rounded-xl py-2 px-1 border border-white/10">
+              <span id="minutes" class="font-extrabold text-lg sm:text-xl text-cyan-300 block leading-none font-mono">48</span>
+              <span class="text-[10px] text-cyan-200 mt-1 block">ደቂቃ</span>
             </div>
-        </section>
-
-        <!-- SOCIAL PROOF TESTIMONIALS -->
-        <section class="py-12 px-4 max-w-6xl mx-auto reveal">
-            <div class="text-center max-w-xl mx-auto mb-8">
-                <span class="text-amber-400 text-xs font-extrabold">የተጠቃሚዎች ምስክርነት</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">በሺዎች የሚቆጠሩ ኢትዮጵያውያን ምን ይላሉ?</h2>
+            <div class="bg-white/10 rounded-xl py-2 px-1 border border-white/10">
+              <span id="seconds" class="font-extrabold text-lg sm:text-xl text-amber-400 block leading-none font-mono">22</span>
+              <span class="text-[10px] text-cyan-200 mt-1 block">ሰከንድ</span>
             </div>
+          </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="glass-card p-5 rounded-2xl space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center font-black text-white">ዳ</div>
-                            <div>
-                                <div class="text-sm font-extrabold text-white">ዳዊት መኮንን</div>
-                                <div class="text-[11px] text-emerald-400">አዲስ አበባ • Samsung A54</div>
-                            </div>
-                        </div>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        «በPlay Store በገንዘብ የምፈልጋቸውን የቪዲዮ ኤዲቲንግ አፖች እና የኳስ መመልከቻ አፖች እዚህ በነጻ አግኝቻቸዋለሁ። ምንም ማስታወቂያ የለባቸውም፣ በጣም ፈጣን ነው!»
-                    </p>
-                </div>
+        <div class="relative bg-gradient-to-r from-amber-500/10 via-amber-400/5 to-transparent border-l-4 border-amber-400 p-3.5 rounded-r-2xl backdrop-blur-sm">
+          <p class="text-sm sm:text-[14.5px] leading-relaxed text-gray-100 font-medium">
+            ያሉት ቦታዎች ውስን ስለሆኑ እና የምዝገባ ቀን ሊጠናቀቅ ጥቂት ቀናት ስለቀሩ <strong class="text-amber-300 font-bold">እድሉን ለማግኘት አሁኑኑ ሊንኩን በመጫን</strong> ተመዝግበው የመከታተያ ቁጥር ያግኙ.ለስራው ከተመረጡ በጥቂት ሳምንት ውስጥ መረጃውን እናደርሳለን
+          </p>
+        </div>
 
-                <div class="glass-card p-5 rounded-2xl space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-black text-white">ሳ</div>
-                            <div>
-                                <div class="text-sm font-extrabold text-white">ሳራ ታደሰ</div>
-                                <div class="text-[11px] text-emerald-400">ባህር ዳር • Tecno Camon</div>
-                            </div>
-                        </div>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        «መጀመሪያ አላመንኩም ነበር ግን ስመዘገብ ወዲያውኑ ከ2500 በላይ አፖች ተከፈቱልኝ። ፎቶ ማሳመሪያ አፖቹ በጣም አሪፍ ናቸው።»
-                    </p>
-                </div>
+        <div class="pt-2">
+          <a href="https://addismobileapps.com/sms.html"
+             id="cta-link"
+             class="shimmer-effect pulse-glow group w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 hover:from-cyan-300 hover:to-indigo-500 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 text-center border border-cyan-200/50 cursor-pointer shadow-xl text-white font-extrabold text-lg sm:text-xl">
+            <span class="tracking-wide">የመከታተያ ቁጥር ያግኙ</span>
+            <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-200 text-cyan-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          
+          <div class="flex items-center justify-center gap-2 mt-3 text-xs text-cyan-200/80 font-medium">
+            <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>ፈጣንና አስተማማኝ ቅፅ • የክፍት ስራ ቦታዎች መረጃ</span>
+          </div>
+        </div>
 
-                <div class="glass-card p-5 rounded-2xl space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center font-black text-white">ና</div>
-                            <div>
-                                <div class="text-sm font-extrabold text-white">ናሆም ግርማ</div>
-                                <div class="text-[11px] text-emerald-400">አዳማ • Infinix Note</div>
-                            </div>
-                        </div>
-                        <span class="text-amber-400 text-xs">★★★★★</span>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        «ጌሞቹ ሁሉም VIP የተከፈተላቸው ናቸው! ለጓደኞቼም ልኬላቸው እየተጠቀሙበት ነው። በእውነት ምርጥ አገልግሎት ነው።»
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ ACCORDION SECTION -->
-        <section class="py-10 px-4 max-w-3xl mx-auto reveal">
-            <h2 class="text-2xl sm:text-3xl font-black text-white text-center mb-6">ተደጋግመው የሚጠየቁ ጥያቄዎች</h2>
-            <div class="space-y-3" id="faq-list">
-                <div class="glass-card rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full p-4 sm:p-5 text-right flex items-center justify-between gap-3 font-extrabold text-sm sm:text-base text-white">
-                        <span>አፕሊኬሽኖቹ ለሁሉም አንድሮይድ ስልኮች ይሰራሉ?</span>
-                        <span class="faq-icon text-emerald-400 text-xl font-bold transition-transform">+</span>
-                    </button>
-                    <div class="faq-content hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
-                        አዎ! Samsung, Tecno, Infinix, Xiaomi, Huawei, Oppo እና ሌሎች ማንኛውም አንድሮይድ (Android 6.0 እና ከዚያ በላይ) ስልኮች ላይ ያለ ምንም ችግር በፍጥነት ይሰራሉ።
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full p-4 sm:p-5 text-right flex items-center justify-between gap-3 font-extrabold text-sm sm:text-base text-white">
-                        <span>አፖቹ ለስልኬ ደህንነታቸው የተጠበቀ ነው?</span>
-                        <span class="faq-icon text-emerald-400 text-xl font-bold transition-transform">+</span>
-                    </button>
-                    <div class="faq-content hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
-                        በፍጹም! እያንዳንዱ አፕሊኬሽን ወደ መድረካችን ከመግባቱ በፊት በልዩ የሴኪዩሪቲ ስካነር ተመርምሮ ከቫይረስ እና ከጎጂ ሶፍትዌሮች 100% ነጻ መሆኑ ይረጋገጣል።
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl overflow-hidden">
-                    <button class="faq-toggle w-full p-4 sm:p-5 text-right flex items-center justify-between gap-3 font-extrabold text-sm sm:text-base text-white">
-                        <span>እንዴት መመዝገብ እና አፖቹን ማውረድ እችላለሁ?</span>
-                        <span class="faq-icon text-emerald-400 text-xl font-bold transition-transform">+</span>
-                    </button>
-                    <div class="faq-content hidden px-4 pb-4 sm:px-5 sm:pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
-                        በገጹ ላይ ያለውን «አሁኑኑ በነጻ ያውርዱ / ይመዝገቡ» የሚለውን ቁልፍ ሲጫኑ ወደ ማረጋገጫ ገጽ ይወስድዎታል። እዚያ ስልክ ቁጥርዎን ሲያረጋግጡ ወዲያውኑ ሁሉንም 2,500+ አፖች በነጻ ማውረድ ይችላሉ።
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FINAL HIGH-IMPACT URGENCY CTA BANNER -->
-        <section class="py-10 px-4 max-w-5xl mx-auto reveal">
-            <div class="rounded-3xl p-7 sm:p-12 bg-gradient-to-br from-emerald-900/70 via-[#0C192C] to-cyan-950/80 border border-emerald-400/40 text-center space-y-5 shadow-[0_0_60px_rgba(16,185,129,0.2)] relative overflow-hidden">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold">
-                    ⚡ የመጨረሻ እድል - ነጻ የVIP ምዝገባ
-                </div>
-                <h2 class="text-2xl sm:text-4xl font-black text-white leading-snug max-w-3xl mx-auto">
-                    ከ2500 የትም የማይገኙ ምርጥ፣ ፕሪሚየም የሞባይል አፕሊኬሽኖችን አሁኑኑ በነጻ ያግኙ!
-                </h2>
-                <p class="text-slate-200 text-sm sm:text-base max-w-xl mx-auto">
-                    ዛሬውኑ ይመዝገቡና ስልክዎን ወደ ሙሉ የመዝናኛ፣ የትምህርት እና የፕሮፌሽናል ስራ ማዕከል ይቀይሩ።
-                </p>
-                <div class="pt-2">
-                    <a href="https://addismobileapps.com/sms.html"
-                       class="cta-btn-primary animate-pulse-glow inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 sm:px-12 sm:py-5 rounded-2xl text-white font-black text-lg sm:text-xl shadow-2xl border border-white/25">
-                        <span>አሁኑኑ በነጻ ይመዝገቡ እና ያውርዱ</span>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
+      </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/10 py-8 px-4 text-center text-xs text-slate-400 relative z-10">
-        <div class="max-w-6xl mx-auto space-y-2">
-            <p class="font-bold text-slate-300">አሪፍ ሞባይል አፕስ (Addis Mobile Apps) • ለአንድሮይድ ተጠቃሚዎች የተዘጋጀ</p>
-            <p>© 2026 መብቱ በህግ የተጠበቀ ነው። ሁሉም ፕሪሚየም አፕሊኬሽኖች ለአንድሮይድ ስልኮች የተመቻቹ ናቸው።</p>
-        </div>
-    </footer>
-
-    <!-- LIVE SOCIAL PROOF TOAST CONTAINER (Bottom-Left on Desktop, Top-Right/Floating on Mobile) -->
-    <div id="live-toast-container" class="fixed bottom-24 md:bottom-6 left-4 z-40 pointer-events-none max-w-[300px]"></div>
-
-    <!-- STICKY MOBILE BOTTOM FLOATING CTA BAR (Always in Thumb Reach!) -->
-    <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-[#070B14]/95 backdrop-blur-xl border-t border-emerald-500/30 p-3 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
-        <a href="https://addismobileapps.com/sms.html"
-           class="cta-btn-primary w-full py-3.5 px-4 rounded-xl flex items-center justify-between text-white font-black text-sm shadow-lg shadow-emerald-500/30">
-            <div class="flex items-center gap-2.5">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
-                </span>
-                <span>2,500+ ፕሪሚየም አፖችን በነጻ ያግኙ</span>
-            </div>
-            <span class="bg-white text-emerald-700 px-3 py-1 rounded-lg text-xs font-black">
-                አሁን ክፈት &rarr;
-            </span>
-        </a>
+    <div class="grid grid-cols-3 gap-2 px-2 text-center text-[11px] text-cyan-200/70">
+      <div class="glass-panel py-2 px-1 rounded-xl">
+        <span class="block text-base mb-0.5">⚡</span>
+        <span>ፈጣን ምላሽ</span>
+      </div>
+      <div class="glass-panel py-2 px-1 rounded-xl">
+        <span class="block text-base mb-0.5">📍</span>
+        <span>አዲስ አበባ እና ዙሪያው</span>
+      </div>
+      <div class="glass-panel py-2 px-1 rounded-xl">
+        <span class="block text-base mb-0.5">🔐</span>
+        <span>የተረጋገጠ ቅጥር</span>
+      </div>
     </div>
+  </div>
 
-    <!-- APP PREVIEW / INSTANT REDIRECT MODAL -->
-    <div id="app-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="glass-card border border-emerald-400/40 rounded-3xl max-w-md w-full p-6 space-y-5 relative animate-toast-enter">
-            <button id="close-modal" class="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold">
-                ✕
-            </button>
-            <div class="flex items-center gap-4">
-                <div id="modal-icon" class="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg"></div>
-                <div>
-                    <span class="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 text-[10px] font-extrabold">PRO VIP ተከፍቷል</span>
-                    <h3 id="modal-title" class="text-xl font-black text-white mt-1">App Name</h3>
-                    <p id="modal-meta" class="text-xs text-emerald-400 font-semibold">4.9 ★ • 100% ነጻ</p>
-                </div>
-            </div>
-            <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
-            <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3 text-xs text-emerald-200 flex items-center justify-between">
-                <span>ሁኔታ: <strong>ለማውረድ ዝግጁ ነው (VIP)</strong></span>
-                <span class="font-num font-bold text-amber-300">0.00 ETB (ነጻ)</span>
-            </div>
-            <a href="https://addismobileapps.com/sms.html"
-               class="cta-btn-primary w-full py-4 rounded-xl flex items-center justify-center gap-2 text-white font-black text-base shadow-xl">
-                <span>አሁኑኑ በነጻ ያውርዱ</span>
-                <span>&rarr;</span>
-            </a>
-        </div>
+  <div id="toast" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-80 glass-panel rounded-2xl p-3 border border-emerald-400/40 shadow-2xl flex items-center gap-3 transition-all duration-500 transform translate-y-24 opacity-0 pointer-events-none z-50">
+    <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-lg flex-shrink-0">
+      👤
     </div>
+    <div class="flex-1 min-w-0">
+      <p id="toast-name" class="text-xs font-bold text-white truncate">ዮናስ ከአዲስ አበባ</p>
+      <p class="text-[11px] text-emerald-300 flex items-center gap-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+        አሁን ተመዝግቦ ቁጥር ተቀብሏል
+      </p>
+    </div>
+  </div>
 
-    <!-- JAVASCRIPT: Countdown, Live Users, Interactive Apps, Social Proof Toasts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const REDIRECT_URL = 'https://addismobileapps.com/sms.html';
+  <script>
+    // Live countdown timer logic
+    let totalSeconds = 2 * 86400 + 14 * 3600 + 48 * 60 + 22; // 2 days 14h 48m 22s
 
-            // 1. PREMIUM APPS DATA (Featuring all requested high-demand Amharic APKs)
-            const premiumApps = [
-                {
-                    id: 1,
-                    name: 'ዋይፋይ ፓስወርድ ማግኛ Pro',
-                    category: 'social',
-                    catLabel: 'ሶሻል እና ዋይፋይ',
-                    rating: '4.9',
-                    size: '16 MB',
-                    downloads: '142K+',
-                    badge: '100% ነጻ VIP',
-                    gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>`,
-                    desc: 'በአቅራቢያዎ የሚገኙ የWi-Fi ኔትወርኮችን ፍጥነት የሚፈትሽ፣ የተቀመጡ ፓስወርዶችን የሚያሳይ እና ደህንነቱ የተጠበቀ ፈጣን ኢንተርኔት የሚያገናኝ VIP አፕ።'
-                },
-                {
-                    id: 2,
-                    name: 'ቲክቶክ ቫይራል ማድረጊያ',
-                    category: 'social',
-                    catLabel: 'ሶሻል እና ዋይራል',
-                    rating: '5.0',
-                    size: '21 MB',
-                    downloads: '198K+',
-                    badge: 'FORYOU VIP',
-                    gradient: 'from-pink-600 via-rose-500 to-amber-500',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>`,
-                    desc: 'ቪዲዮዎችዎ በአጭር ጊዜ ForYou እንዲገቡ፣ ትክክለኛ ሃሽታጎችን እንዲመርጡ እንዲሁም እውነተኛ ፎሎወር እና ላይክ በፍጥነት እንዲያገኙ የሚረዳ ምርጥ መተግበሪያ።'
-                },
-                {
-                    id: 3,
-                    name: 'ስራ ፈላጊ ኢትዮጵያ VIP',
-                    category: 'jobs',
-                    catLabel: 'ስራ እና ብድር',
-                    rating: '4.9',
-                    size: '14 MB',
-                    downloads: '165K+',
-                    badge: 'በየቀኑ አዲስ ስራ',
-                    gradient: 'from-blue-600 via-indigo-600 to-cyan-500',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
-                    desc: 'በአዲስ አበባ እና በሁሉም የኢትዮጵያ ክልሎች በየቀኑ የሚወጡ የመንግስት፣ የግል ድርጅቶች እና የNGO ክፍት የስራ ማስታወቂያዎችን ወዲያውኑ ያግኙ።'
-                },
-                {
-                    id: 4,
-                    name: 'ብድር አፋላጊ (Loan Finder)',
-                    category: 'jobs',
-                    catLabel: 'ስራ እና ብድር',
-                    rating: '4.9',
-                    size: '12 MB',
-                    downloads: '124K+',
-                    badge: 'ፈጣን ብድር መረጃ',
-                    gradient: 'from-amber-500 via-yellow-500 to-emerald-600',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-                    desc: 'በኢትዮጵያ ውስጥ ያለ ዋስትና ወይም በቀላል መስፈርት በሞባይል ፈጣን ብድር የሚሰጡ ባንኮችን እና ማይክሮፋይናንስ ተቋማትን በአንድ ቦታ የሚያገናኝ።'
-                },
-                {
-                    id: 5,
-                    name: 'ኦንላይን ስራ (ቤት ሆነው ይስሩ)',
-                    category: 'jobs',
-                    catLabel: 'ስራ እና ብድር',
-                    rating: '4.8',
-                    size: '18 MB',
-                    downloads: '153K+',
-                    badge: 'በዶላር እና በብር',
-                    gradient: 'from-teal-500 via-emerald-600 to-green-600',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
-                    desc: 'ስልክዎን ብቻ በመጠቀም ቤትዎ ሆነው ገንዘብ የሚሰሩባቸውን ታማኝ የኦንላይን ስራዎች፣ የፍሪላንስ ድረ-ገጾች እና አሰራራቸውን በአማርኛ የሚያስተምር።'
-                },
-                {
-                    id: 6,
-                    name: 'የውጪ ሃገር ስራ መረጃ VIP',
-                    category: 'jobs',
-                    catLabel: 'የውጪ ስራ እና ቪዛ',
-                    rating: '4.9',
-                    size: '15 MB',
-                    downloads: '118K+',
-                    badge: 'ህጋዊ የስራ እድል',
-                    gradient: 'from-sky-500 via-blue-600 to-indigo-700',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-                    desc: 'ወደ አረብ ሃገራት፣ አውሮፓ፣ ካናዳ እና አሜሪካ ህጋዊ የስራ ቪዛ የሚሰጡ ኤጀንሲዎችን እና ቀጥታ የስራ ማመልከቻ መንገዶችን የሚያሳይ።'
-                },
-                {
-                    id: 7,
-                    name: 'ሽልማት አፕሊኬሽን (Daily Cash)',
-                    category: 'entertainment',
-                    catLabel: 'ፊልም እና ሽልማት',
-                    rating: '4.9',
-                    size: '17 MB',
-                    downloads: '189K+',
-                    badge: 'በየቀኑ የሚሸልም',
-                    gradient: 'from-amber-400 via-orange-500 to-red-600',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>`,
-                    desc: 'ቀላል ጥያቄዎችን በመመለስ እና ዕለታዊ ተልዕኮዎችን በማጠናቀቅ የሞባይል ካርድ፣ ዳታ እና የገንዘብ ሽልማቶችን በየቀኑ የሚያሸንፉበት።'
-                },
-                {
-                    id: 8,
-                    name: 'የፊልም ማያ (አማርኛ ትርጉም HD)',
-                    category: 'entertainment',
-                    catLabel: 'ፊልም እና ኳስ',
-                    rating: '5.0',
-                    size: '26 MB',
-                    downloads: '240K+',
-                    badge: 'VIP ፊልም እና ኳስ',
-                    gradient: 'from-rose-600 via-red-600 to-purple-700',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>`,
-                    desc: 'አዳዲስ በአማርኛ የተተረጎሙ የአክሽን እና የፍቅር ፊልሞችን፣ ተከታታይ ድራማዎችን እና የቀጥታ እግር ኳስ ጨዋታዎችን ያለ ማስታወቂያ ይመልከቱ።'
-                },
-                {
-                    id: 9,
-                    name: 'TurboShield Ultra VPN Pro',
-                    category: 'tools',
-                    catLabel: 'VPN እና ኤዲተር',
-                    rating: '4.9',
-                    size: '19 MB',
-                    downloads: '95K+',
-                    badge: 'ያልተገደበ ፍጥነት',
-                    gradient: 'from-cyan-500 via-blue-600 to-indigo-600',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
-                    desc: 'በዓለም ዙሪያ ያሉ ፈጣን VIP ሰርቨሮችን በነጻ የሚከፍት፣ የኢንተርኔት ፍጥነትዎን የሚጨምር እና ግላዊ መረጃዎን የሚጠብቅ።'
-                },
-                {
-                    id: 10,
-                    name: 'CapCut & Pixel AI Pro VIP',
-                    category: 'tools',
-                    catLabel: 'VPN እና ኤዲተር',
-                    rating: '5.0',
-                    size: '54 MB',
-                    downloads: '210K+',
-                    badge: 'NO WATERMARK',
-                    gradient: 'from-purple-600 via-fuchsia-600 to-pink-500',
-                    iconSvg: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`,
-                    desc: 'ለቲክቶክ እና ለዩቲዩብ ምርጥ ቪዲዮዎችን እና ፎቶዎችን የሚሰሩበት ሁሉም የPRO ፊልተሮች እና AI ኢፌክቶች የተከፈቱለት ልዩ እትም።'
-                }
-            ];
+    function updateTimer() {
+      if (totalSeconds <= 0) {
+        totalSeconds = 86400; // Reset urgency loop
+      }
+      totalSeconds--;
 
-            const appsGrid = document.getElementById('apps-grid');
-            const modal = document.getElementById('app-modal');
+      const d = Math.floor(totalSeconds / 86400);
+      const h = Math.floor((totalSeconds % 86400) / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = Math.floor(totalSeconds % 60);
 
-            function renderApps(filter = 'all') {
-                appsGrid.innerHTML = '';
-                const filtered = filter === 'all'
-                    ? premiumApps
-                    : premiumApps.filter(app => app.category === filter);
+      document.getElementById('days').textContent = d < 10 ? '0' + d : d;
+      document.getElementById('hours').textContent = h < 10 ? '0' + h : h;
+      document.getElementById('minutes').textContent = m < 10 ? '0' + m : m;
+      document.getElementById('seconds').textContent = s < 10 ? '0' + s : s;
+    }
+    setInterval(updateTimer, 1000);
 
-                filtered.forEach(app => {
-                    const card = document.createElement('div');
-                    card.className = 'glass-card rounded-2xl p-4 flex flex-col justify-between hover:border-emerald-400/50 hover:-translate-y-1.5 transition-all duration-300 group cursor-pointer';
-                    card.innerHTML = `
-                        <div>
-                            <div class="flex items-start justify-between gap-2 mb-3">
-                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition">
-                                    ${app.iconSvg}
-                                </div>
-                                <span class="px-2.5 py-1 rounded-lg bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[10px] font-extrabold">
-                                    ${app.badge}
-                                </span>
-                            </div>
-                            <h3 class="text-base font-extrabold text-white group-hover:text-emerald-300 transition">${app.name}</h3>
-                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mt-1 font-num">
-                                <span class="text-amber-400 font-bold">★ ${app.rating}</span>
-                                <span>•</span>
-                                <span>${app.size}</span>
-                                <span>•</span>
-                                <span class="text-emerald-400 font-semibold">${app.downloads} አውርደውታል</span>
-                            </div>
-                            <p class="text-xs text-slate-300 mt-2.5 line-clamp-2 leading-relaxed">
-                                ${app.desc}
-                            </p>
-                        </div>
+    // Realistic Live Social Proof Toast Ticker
+    const applicants = [
+      { name: "ዮናስ ታደሰ", city: "አዲስ አበባ" },
+      { name: "ሰላማዊት አበበ", city: "ደብረዘይት" },
+      { name: "ዳዊት ከበደ", city: "ኮተቤ" },
+      { name: "ቤተልሔም ግርማ", city: "ሰሚት" },
+      { name: "ሚካኤል ተስፋዬ", city: "ቦሌ" },
+      { name: "ፍፁም ሃይሉ", city: "ቃሊቲ" },
+      { name: "ሄለን ንጉሴ", city: "ለቡ" }
+    ];
 
-                        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between gap-2">
-                            <button type="button" class="preview-trigger text-xs font-bold text-cyan-300 hover:text-white transition">
-                                ዝርዝር ይመልከቱ
-                            </button>
-                            <a href="${REDIRECT_URL}"
-                               class="cta-btn-primary px-4 py-2 rounded-xl text-xs font-black text-white shadow-md flex items-center gap-1.5">
-                                <span>በነጻ አውርድ</span>
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                                </svg>
-                            </a>
-                        </div>
-                    `;
+    const toast = document.getElementById('toast');
+    const toastName = document.getElementById('toast-name');
+    let toastIndex = 0;
 
-                    // Clicking card opens preview modal or redirects directly when clicking download
-                    card.addEventListener('click', (e) => {
-                        if (e.target.closest('a')) return; // let anchor redirect directly
-                        openAppModal(app);
-                    });
+    function showNextToast() {
+      const applicant = applicants[toastIndex];
+      toastName.textContent = `${applicant.name} (${applicant.city})`;
+      
+      // Slide In
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
 
-                    appsGrid.appendChild(card);
-                });
-            }
+      // Slide Out after 4 seconds
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4000);
 
-            function openAppModal(app) {
-                const modalIcon = document.getElementById('modal-icon');
-                modalIcon.className = `w-16 h-16 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center text-white shadow-lg shrink-0`;
-                modalIcon.innerHTML = app.iconSvg;
-                document.getElementById('modal-title').textContent = app.name;
-                document.getElementById('modal-meta').textContent = `${app.catLabel} • ★ ${app.rating} • ${app.size}`;
-                document.getElementById('modal-desc').textContent = app.desc;
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            }
+      toastIndex = (toastIndex + 1) % applicants.length;
+    }
 
-            document.getElementById('close-modal').addEventListener('click', () => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            });
+    // Trigger first toast after 3 seconds, then every 9 seconds
+    setTimeout(() => {
+      showNextToast();
+      setInterval(showNextToast, 9500);
+    }, 3000);
 
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                }
-            });
-
-            // Category Filtering
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.cat-btn').forEach(b => {
-                        b.classList.remove('bg-emerald-500', 'text-white', 'shadow-lg', 'shadow-emerald-500/30');
-                        b.classList.add('glass-card', 'text-slate-300');
-                    });
-                    btn.classList.remove('glass-card', 'text-slate-300');
-                    btn.classList.add('bg-emerald-500', 'text-white', 'shadow-lg', 'shadow-emerald-500/30');
-                    renderApps(btn.dataset.cat);
-                });
-            });
-
-            renderApps('all');
-
-            // 2. URGENCY COUNTDOWN TIMER (Persisted in sessionStorage for realism)
-            let remainingSeconds = parseInt(sessionStorage.getItem('addis_vip_timer'), 10);
-            if (isNaN(remainingSeconds) || remainingSeconds <= 60) {
-                remainingSeconds = (1 * 3600) + (47 * 60) + 59; // 01:47:59
-            }
-
-            const elHours = document.getElementById('cd-hours');
-            const elMinutes = document.getElementById('cd-minutes');
-            const elSeconds = document.getElementById('cd-seconds');
-
-            function updateCountdown() {
-                if (remainingSeconds <= 0) {
-                    remainingSeconds = 59 * 60 + 59;
-                }
-                const h = Math.floor(remainingSeconds / 3600);
-                const m = Math.floor((remainingSeconds % 3600) / 60);
-                const s = remainingSeconds % 60;
-
-                elHours.textContent = String(h).padStart(2, '0');
-                elMinutes.textContent = String(m).padStart(2, '0');
-                elSeconds.textContent = String(s).padStart(2, '0');
-
-                remainingSeconds--;
-                sessionStorage.setItem('addis_vip_timer', remainingSeconds);
-            }
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-
-            // 3. LIVE REGISTERED USERS COUNTER (Dynamic realistic increments)
-            let liveUsers = 14892;
-            const topLiveEl = document.getElementById('top-live-users');
-            const heroLiveEl = document.getElementById('hero-live-count');
-
-            setInterval(() => {
-                const delta = Math.floor(Math.random() * 4) + 1;
-                liveUsers += delta;
-                const formatted = liveUsers.toLocaleString('en-US');
-                if (topLiveEl) topLiveEl.textContent = formatted;
-                if (heroLiveEl) heroLiveEl.textContent = formatted;
-            }, 3800);
-
-            // 4. LIVE SOCIAL PROOF TOAST NOTIFICATIONS (Ethiopian Cities & Users)
-            const recentActivity = [
-                { name: 'አቤል ከአዲስ አበባ', action: '«ዋይፋይ ፓስወርድ ማግኛ» አሁን በነጻ አወረደ', time: 'አሁን' },
-                { name: 'ቤተልሔም ከድሬዳዋ', action: '«የውጪ ሃገር ስራ መረጃ VIP» አግኝታለች', time: 'ከ10 ሰከንድ በፊት' },
-                { name: 'ዮሐንስ ከባህር ዳር', action: '«ቲክቶክ ቫይራል ማድረጊያ» ከፍቷል', time: 'ከ22 ሰከንድ በፊት' },
-                { name: 'ሜሮን ከሀዋሳ', action: '«ብድር አፋላጊ» በነጻ አውርዳለች', time: 'ከ35 ሰከንድ በፊት' },
-                { name: 'ኤርሚያስ ከመቐለ', action: '«የፊልም ማያ VIP» በነጻ አውርዷል', time: 'አሁን' },
-                { name: 'ሄለን ከአዳማ', action: '«ሽልማት አፕሊኬሽን» እና «ኦንላይን ስራ» ከፍታለች', time: 'ከ16 ሰከንድ በፊት' }
-            ];
-
-            let toastIndex = 0;
-            const toastContainer = document.getElementById('live-toast-container');
-
-            function showLiveToast() {
-                const item = recentActivity[toastIndex % recentActivity.length];
-                toastIndex++;
-
-                const toast = document.createElement('div');
-                toast.className = 'toast-enter glass-card border border-emerald-400/40 rounded-2xl p-3 shadow-2xl flex items-center gap-3 bg-[#0B1324]/95';
-                toast.innerHTML = `
-                    <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 font-black text-sm shrink-0">
-                        ✓
-                    </div>
-                    <div class="text-right">
-                        <div class="text-xs font-extrabold text-white">${item.name}</div>
-                        <div class="text-[11px] text-emerald-300 leading-tight">${item.action}</div>
-                        <div class="text-[9px] text-slate-400 mt-0.5">${item.time}</div>
-                    </div>
-                `;
-
-                toastContainer.innerHTML = '';
-                toastContainer.appendChild(toast);
-
-                setTimeout(() => {
-                    toast.classList.remove('toast-enter');
-                    toast.classList.add('toast-exit');
-                }, 4200);
-            }
-
-            setTimeout(showLiveToast, 2200);
-            setInterval(showLiveToast, 7500);
-
-            // 5. FAQ ACCORDION INTERACTION
-            document.querySelectorAll('.faq-toggle').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const content = btn.nextElementSibling;
-                    const icon = btn.querySelector('.faq-icon');
-                    const isHidden = content.classList.contains('hidden');
-
-                    document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-                    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
-
-                    if (isHidden) {
-                        content.classList.remove('hidden');
-                        icon.textContent = '−';
-                    }
-                });
-            });
-
-            // 6. SCROLL REVEAL OBSERVER
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-    </script>
+    // Dynamic Micro-interaction on spots counter
+    const spotsEl = document.getElementById('spots-count');
+    let spots = 7;
+    setInterval(() => {
+      if (spots > 3) {
+        spots--;
+        spotsEl.textContent = `${spots} ብቻ`;
+        spotsEl.classList.add('scale-125', 'bg-red-500/40');
+        setTimeout(() => {
+          spotsEl.classList.remove('scale-125', 'bg-red-500/40');
+        }, 400);
+      }
+    }, 28000);
+  </script>
 </body>
 </html>
